@@ -1,0 +1,346 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* sticky navigation bar at the top */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+/* nav links styling */
+nav a {
+    padding: 20px 25px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+    font-size: 18px;
+}
+
+/* subtle color change when hovering over nav links */
+nav a:hover {
+    color: #E1D8BF;
+}
+
+#hero {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* container for the hero content */
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* styling the main heading in the hero section */
+#hero h1 {
+    position: relative;
+    color: #333;
+    font-size: 48px;
+    text-shadow: none;
+    max-width: 40%;
+    z-index: 2;
+    margin-right: 5%;
+}
+
+/* hero image styling */
+#hero img {
+    width: 50%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    z-index: 1;
+}
+
+/* setting up benefits slider */
+.benefit-slider {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* individual benefit cards */
+.benefit-tile {
+    width: 30%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* showing the active benefit card */
+.benefit-tile.active {
+    opacity: 1;
+}
+
+/* benefit images */
+.benefit-tile img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* section headers styling */
+.section-header {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 36px;
+    color: #333;
+}
+
+/* layout for benefits and testimonials sections */
+#benefits, #testimonials {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+/* video container setup */
+.video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+/* responsive video sizing */
+.video-container iframe {
+    width: 80%;
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+/* footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0 20px;
+}
+
+/* footer content layout */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* individual footer sections */
+.footer-section {
+    flex: 1 1 200px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+/* footer headings */
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* footer lists */
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+/* footer links */
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+/* footer text */
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* footer bottom section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+/* newsletter section styling */
+#newsletter {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f8f8f8;
+    margin-top: 50px;
+}
+
+#newsletter h2 {
+    margin-bottom: 20px;
+}
+
+/* newsletter button */
+#open-drawer {
+    font-size: 1.1em;
+    padding: 10px 20px;
+}
+
+/* newsletter form styling */
+.drawer-overview sl-input {
+    margin-bottom: 20px;
+}
+
+.drawer-overview sl-button[type="submit"] {
+    width: 100%;
+}
+
+/* wave divider animation */
+.wave-divider {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: -1px 0;
+}
+
+.wave-divider svg {
+    width: 100%;
+    height: 100%;
+}
+
+.wave {
+    fill: #E1D8BF;
+    animation: waveAnimation 8s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* wave animation keyframes */
+@keyframes waveAnimation {
+    0%, 100% {
+        d: path("M0,50 C320,80 420,0 740,50 C1060,100 1120,20 1440,50 V100 H0");
+    }
+    50% {
+        d: path("M0,50 C320,20 420,100 740,50 C1060,0 1120,80 1440,50 V100 H0");
+    }
+}
+
+/* responsive design */
+@media screen and (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #hero h1 {
+        max-width: 80%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #hero img {
+        width: 80%;
+    }
+
+    .benefit-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefit-tile {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    #hero h1 {
+        font-size: 32px;
+        max-width: 90%;
+    }
+
+    #hero img {
+        width: 90%;
+    }
+
+    .section-header {
+        font-size: 28px;
+    }
+
+    .benefit-tile {
+        width: 90%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .video-container iframe {
+        width: 100%;
+    }
+}

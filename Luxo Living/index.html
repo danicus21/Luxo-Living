@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumma Sauna</title>
+
+    <!-- loading styles and animation libraries -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <!-- shoelace ui component library -->
+    <script src="https://unpkg.com/@shoelace-style/shoelace/dist/shoelace.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.0/cdn/themes/light.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.0/cdn/shoelace-autoloader.js"></script>
+</head>
+<body>
+    <!-- simple navigation bar with anchor links -->
+    <nav id="navbar">
+        <a href="#hero">Home</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#testimonials">Testimonials</a>
+    </nav>
+
+    <!-- main hero section with the sauna image -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>The Tumma Sauna</h1>
+            <img src="images/tunmmasauna.png" alt="Tumma Sauna">
+        </div>
+    </section>
+
+    <!-- wave separator between sections -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path class="wave" d="M0,50 C320,80 420,0 740,50 C1060,100 1120,20 1440,50 V100 H0" />
+        </svg>
+    </div>
+
+    <!-- benefits section with a sliding carousel -->
+    <section id="benefits">
+        <h2>Benefits</h2>
+        <div class="benefit-slider">
+            <!-- individual benefit tiles that slide -->
+            <div class="benefit-tile active" data-index="0">
+                <img src="images/detoxification.png" alt="Detoxification">
+                <h3>Detoxification</h3>
+                <p>Experience deep detoxification through infrared heat.</p>
+            </div>
+            <div class="benefit-tile" data-index="1">
+                <img src="images/relaxation.png" alt="Relaxation">
+                <h3>Relaxation</h3>
+                <p>Relax and unwind with soothing infrared therapy.</p>
+            </div>
+            <div class="benefit-tile" data-index="2">
+                <img src="images/recovery.png" alt="Recovery">
+                <h3>Recovery</h3>
+                <p>Aid your recovery with targeted infrared heat.</p>
+            </div>
+        </div>
+        <!-- buttons to navigate through benefits -->
+        <div class="benefit-navigation">
+            <sl-button variant="primary" class="prev-benefit">Previous</sl-button>
+            <sl-button variant="primary" class="next-benefit">Next</sl-button>
+        </div>
+    </section>
+
+    <!-- testimonials section with embedded youtube video -->
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/GPACCjCeJmA?autoplay=1&mute=1" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+    <!-- newsletter signup section with a popup drawer -->
+    <section id="newsletter">
+        <h2>Stay Updated</h2>
+        <sl-button variant="primary" id="open-drawer">Sign up for our newsletter</sl-button>
+        <sl-drawer label="Newsletter Signup" class="drawer-overview">
+            <form id="newsletter-form">
+                <sl-input name="email" type="email" label="Email" required></sl-input>
+                <sl-button type="submit" variant="primary">Subscribe</sl-button>
+            </form>
+        </sl-drawer>
+    </section>
+
+    <!-- another wave divider for visual separation -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path class="wave" d="M0,50 C320,80 420,0 740,50 C1060,100 1120,20 1440,50 V100 H0" />
+        </svg>
+    </div>
+
+    <!-- alert popup for successful newsletter subscription -->
+    <sl-alert variant="primary" duration="3000" closable id="subscription-alert">
+        <sl-icon slot="icon" name="info-circle"></sl-icon>
+        Thank you for subscribing to our newsletter!
+    </sl-alert>
+
+    <!-- footer with multiple columns of links -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">About Luxo Living</a></li>
+                    <li><a href="#">Our Story</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Support</h3>
+                <ul>
+                    <li><a href="#">FAQ's</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Warranty Information</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Shop All Saunas</a></li>
+                    <li><a href="#">Wellness Blog</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Luxo Living. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- main javascript file -->
+    <script src="main.js"></script>
+</body>
+</html>
